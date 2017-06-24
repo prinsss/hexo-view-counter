@@ -17,7 +17,7 @@ class PostViewController extends Controller
         $result = DB::table('post_views')->where('slug', $slug)->first();
 
         if ($result) {
-            return $result->pv;
+            return response()->json(['slug' => $slug, 'pv' => $result->pv]);
         } else {
             return response('No such slug.', 404);
         }
@@ -37,13 +37,15 @@ class PostViewController extends Controller
                 'updated_at' => Carbon::now('Asia/Shanghai')
             ]);
 
-            return $result->pv + 1;
+            $pv = $result->pv + 1;
         } else {
             DB::table('post_views')->insert(
                 ['slug' => $slug, 'pv' => 1, 'created_at' => Carbon::now('Asia/Shanghai')]
             );
 
-            return 1;
+            $pv = 1;
         }
+
+        return response()->json(['slug' => $slug, 'pv' => $pv]);
     }
 }
