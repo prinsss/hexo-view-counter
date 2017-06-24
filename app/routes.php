@@ -11,6 +11,8 @@
 |
 */
 
+header('Access-Control-Allow-Origin: *');
+
 $app->get('/', function () use ($app) {
     return "Post views counter for Hexo created by @printempw. Built on {$app->version()}.";
 });
