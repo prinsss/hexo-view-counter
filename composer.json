@@ -1,0 +1,31 @@
+{
+    "name": "printempw/hexo-view-counter",
+    "description": "A post view counter for Hexo blog built on Lumen.",
+    "keywords": ["Hexo", "lumen"],
+    "license": "GPLv3",
+    "type": "project",
+    "require": {
+        "php": ">=5.6.4",
+        "laravel/lumen-framework": "5.4.*",
+        "vlucas/phpdotenv": "~2.2",
+        "symfony/var-dumper": "^3.3"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "phpunit/phpunit": "~5.0",
+        "mockery/mockery": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/",
+            "database/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
