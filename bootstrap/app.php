@@ -78,7 +78,7 @@ $app->routeMiddleware([
 |
 */
 
-// $app->register(App\Providers\AppServiceProvider::class);
+$app->register(Illuminate\Redis\RedisServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -94,5 +94,7 @@ $app->routeMiddleware([
 $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
     require __DIR__.'/../app/routes.php';
 });
+
+$app->configure('database');
 
 return $app;
