@@ -59,6 +59,6 @@ Make a GET request to `http://your-domain/popular-posts` to get the popular post
 
 ## 许可证 / License
 
-本程序是基于 GUN General Public License v3.0 协议开放源代码的自由软件。
+本程序是基于 The Star And Thank Author License (SATA) 协议开放源代码的自由软件。
 
-The `hexo-view-counter` is open-sourced software licensed under the GUN General Public License v3.0.
+The `hexo-view-counter` is open-sourced software licensed under the The Star And Thank Author License (SATA).
