@@ -19,7 +19,7 @@ class PostViewController extends Controller
         if ($result) {
             return response()->json(['slug' => $slug, 'pv' => $result->pv]);
         } else {
-            return response('No such slug.', 404);
+            return response("No such slug [$slug].", 404);
         }
     }
 

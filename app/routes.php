@@ -17,10 +17,10 @@ $app->get('/', function () use ($app) {
     return "Post views counter for Hexo created by @printempw. Built on {$app->version()}.";
 });
 
-$app->get('/get/{slug}', 'PostViewController@get');
+$app->get('/get/{slug:.*}', 'PostViewController@get');
 
 $app->get('/popular-posts', 'PopularPostsController@getSlugs');
 
 $app->group(['middleware' => 'throttle:'.env('RATE_LIMIT').',1'], function () use ($app) {
-    $app->post('/increase/{slug}', 'PostViewController@increase');
+    $app->post('/increase/{slug:.*}', 'PostViewController@increase');
 });
